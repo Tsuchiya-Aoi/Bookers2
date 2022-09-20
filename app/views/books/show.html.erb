@@ -6,10 +6,12 @@
       <td>
         <%= image_tag 'no_image.jpg' %>
       </td>
-      <td><%= @book.title %></td>
+      <td><%= link_to @book.title %></td>
       <td><%= @book.body %></td>
       <td>
-        <%= link_to "Edit", edit_book_path(@book) %>
+        <% if @book.user == current_user %>
+          <%= link_to "Edit", edit_book_path(@book) %>
+        <% end %>
       </td>
       <td>
         <% if @book.user == current_user %>
