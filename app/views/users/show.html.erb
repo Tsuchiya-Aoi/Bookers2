@@ -4,9 +4,9 @@
   <h3>name<%= @user.name %></h3>
   <h3>introduction<%= @user.introduction %></h3>
 </div>
-<% if @user == current_user %>
+
   <p><%= link_to "プロフ設定", edit_user_path(@user) %></p>
-<% end %>
+
 
 <h2>New book</h2>
   <%= form_with model: @book do |f| %>
